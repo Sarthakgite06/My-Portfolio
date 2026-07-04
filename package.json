@@ -1,0 +1,16 @@
+{
+  "name": "sarthak-portfolio-fullstack",
+  "version": "1.0.0",
+  "description": "Fullstack Portfolio & Centralized Health Card System",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && npm run install:frontend",
+    "install:frontend": "cd frontend && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && \"C:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2025.2.2\\plugins\\maven\\lib\\maven3\\bin\\mvn.cmd\" spring-boot:run",
+    "dev:frontend": "cd frontend && npm run dev"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

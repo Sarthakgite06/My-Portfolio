@@ -1,0 +1,119 @@
+.projects-section {
+  background-color: rgba(12, 18, 34, 0.3);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  overflow: hidden;
+  height: 100%;
+}
+
+.featured-card {
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.05);
+}
+
+.featured-card:hover {
+  border-color: var(--accent-pink);
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15), 
+              0 0 30px rgba(236, 72, 153, 0.05);
+}
+
+.project-image-box {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.proj-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .proj-image {
+  transform: scale(1.05);
+}
+
+.featured-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--accent-pink);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(236, 72, 153, 0.4);
+}
+
+.project-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.proj-title {
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-family: var(--font-heading);
+}
+
+.proj-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tag-badge {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.proj-actions {
+  margin-top: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+@media (max-width: 968px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
