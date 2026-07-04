@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './AdminDashboard.jsx'; // import styling
 import './AdminDashboard.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const AdminDashboard = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -18,7 +20,7 @@ const AdminDashboard = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('http://localhost:5000/api/contact');
+      const response = await fetch(`${API_BASE_URL}/api/contact`);
       if (response.ok) {
         const json = await response.json();
         setMessages(json.data || []);
@@ -45,7 +47,7 @@ const AdminDashboard = () => {
     if (!window.confirm('Are you sure you want to delete this message?')) return;
     
     try {
-      const response = await fetch(`http://localhost:5000/api/contact/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/contact/${id}`, {
         method: 'DELETE'
       });
       if (response.ok) {

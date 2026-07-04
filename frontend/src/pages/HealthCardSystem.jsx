@@ -6,6 +6,8 @@ import {
 import { Link } from 'react-router-dom';
 import './HealthCardSystem.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const HealthCardSystem = () => {
   const [activeTab, setActiveTab] = useState('register');
   const [regData, setRegData] = useState({
@@ -37,7 +39,7 @@ const HealthCardSystem = () => {
   // Fetch Stats on load
   const fetchStats = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/health-cards/stats/summary');
+      const response = await fetch(`${API_BASE_URL}/api/health-cards/stats/summary`);
       if (response.ok) {
         const json = await response.json();
         setStats(json.data);
@@ -63,7 +65,7 @@ const HealthCardSystem = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/health-cards', {
+      const response = await fetch(`${API_BASE_URL}/api/health-cards`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(regData)
@@ -103,13 +105,13 @@ const HealthCardSystem = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/health-cards/${queryId}`);
+      const response = await fetch(`${API_BASE_URL}/api/health-cards/${queryId}`);
       const data = await response.json();
 
       if (response.ok) {
         setActiveCard(data.data);
         // Load medical history records
-        const recResponse = await fetch(`http://localhost:5000/api/health-cards/${queryId}/records`);
+        const recResponse = await fetch(`${API_BASE_URL}/api/health-cards/${queryId}/records`);
         const recData = await recResponse.json();
         setMedicalRecords(recData.data || []);
         
@@ -140,7 +142,7 @@ const HealthCardSystem = () => {
 
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/health-cards/${activeCard.id}/records`, {
+      const response = await fetch(`${API_BASE_URL}/api/health-cards/${activeCard.id}/records`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(doctorForm)
