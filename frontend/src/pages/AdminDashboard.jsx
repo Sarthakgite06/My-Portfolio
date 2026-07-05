@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Trash2, Shield, Calendar, Terminal, RefreshCw, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import './AdminDashboard.jsx'; // import styling
 import './AdminDashboard.css';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
