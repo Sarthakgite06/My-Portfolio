@@ -4,10 +4,10 @@ import './About.css';
 
 const About = () => {
   const stats = [
-    { icon: <GraduationCap size={20} className="stat-icon-gold" />, label: 'Overall CGPA', value: '9.60 / 10' },
-    { icon: <Briefcase size={20} className="stat-icon-blue" />, label: 'Experience', value: '2 Internships' },
-    { icon: <Code size={20} className="stat-icon-pink" />, label: 'Projects Done', value: '5+ Core Apps' },
-    { icon: <Award size={20} className="stat-icon-teal" />, label: 'Dept Leadership', value: 'Vice President' }
+    { icon: <GraduationCap size={20} className="stat-icon-gold" />, label: 'Overall CGPA', value: '9.60 / 10', colorClass: 'gold' },
+    { icon: <Briefcase size={20} className="stat-icon-blue" />, label: 'Experience', value: '2 Internships', colorClass: 'blue' },
+    { icon: <Code size={20} className="stat-icon-pink" />, label: 'Projects Done', value: '5+ Core Apps', colorClass: 'pink' },
+    { icon: <Award size={20} className="stat-icon-teal" />, label: 'Dept Leadership', value: 'Vice President', colorClass: 'teal' }
   ];
 
   return (
@@ -37,7 +37,7 @@ const About = () => {
             
             <div className="stats-dashboard">
               {stats.map((stat, idx) => (
-                <div key={idx} className="stat-card glass-card">
+                <div key={idx} className={`stat-card glass-card stat-card-${stat.colorClass}`}>
                   <div className="stat-header">
                     {stat.icon}
                     <span className="stat-value">{stat.value}</span>

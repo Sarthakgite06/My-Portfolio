@@ -1,9 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ExternalLink, Layers, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ExternalLink, Layers, ArrowRight, Star, GitFork, FolderGit2, AlertTriangle, RefreshCw } from 'lucide-react';
 import './Projects.css';
 
 const Projects = () => {
+  const [gitRepos, setGitRepos] = useState([]);
+  const [reposLoading, setReposLoading] = useState(true);
+  const [reposError, setReposError] = useState(null);
+
   const projectsData = [
     {
       id: 'healthcard',
@@ -13,7 +16,7 @@ const Projects = () => {
       tags: ['React.js', 'Express.js', 'Node.js', 'Vercel-Deployment', 'MERN Stack'],
       isFeatured: true,
       link: 'https://chc-frontend-brown.vercel.app/login',
-      github: 'https://github.com/sarthakgite06'
+      github: 'https://github.com/Sarthakgite06/Centralized-Health-Card-System'
     },
     {
       id: 'hotel',
@@ -41,11 +44,41 @@ const Projects = () => {
     }
   ];
 
+  const fetchGithubRepos = async () => {
+    setReposLoading(true);
+    setReposError(null);
+    try {
+      const response = await fetch('https://api.github.com/users/Sarthakgite06/repos?sort=updated&per_page=12');
+      if (!response.ok) {
+        throw new Error('Failed to retrieve GitHub repositories.');
+      }
+      const data = await response.json();
+      
+      // Filter out forks and the portfolio repository itself to show unique projects
+      const filtered = data
+        .filter(repo => !repo.fork && repo.name.toLowerCase() !== 'my-portfolio')
+        .slice(0, 6); // Limit to top 6 active repositories
+      
+      setGitRepos(filtered);
+    } catch (err) {
+      console.error(err);
+      setReposError('Could not sync dynamic GitHub repositories. Showing direct profile access instead.');
+    } finally {
+      setReposLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchGithubRepos();
+  }, []);
+
   return (
     <section id="projects" className="section projects-section">
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
+        <p className="projects-subtitle">Production applications and academic masterpieces</p>
         
+        {/* Hand-curated projects grid */}
         <div className="projects-grid">
           {projectsData.map((project) => (
             <div 
@@ -113,6 +146,91 @@ const Projects = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Dynamic GitHub repositories showcase */}
+        <div className="github-showcase-section" style={{ marginTop: '80px' }}>
+          <div className="github-section-header">
+            <div>
+              <h3 className="github-section-title">Open Source Repositories</h3>
+              <p className="github-section-subtitle">Synced in real-time from GitHub</p>
+            </div>
+            <button 
+              onClick={fetchGithubRepos} 
+              className="btn btn-secondary btn-small"
+              title="Refresh GitHub Feed"
+              disabled={reposLoading}
+            >
+              <RefreshCw size={14} className={reposLoading ? 'spin' : ''} /> Sync Repos
+            </button>
+          </div>
+
+          {reposLoading ? (
+            <div className="github-loader-container">
+              <RefreshCw className="spin" size={32} style={{ color: 'var(--accent)' }} />
+              <p>Fetching active GitHub repositories...</p>
+            </div>
+          ) : reposError ? (
+            <div className="github-error-container glass-card">
+              <AlertTriangle size={32} style={{ color: 'var(--accent-gold)', marginBottom: '12px' }} />
+              <p>{reposError}</p>
+              <a 
+                href="https://github.com/Sarthakgite06" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary"
+                style={{ marginTop: '16px' }}
+              >
+                Go to GitHub Profile
+              </a>
+            </div>
+          ) : (
+            <div className="github-repos-grid">
+              {gitRepos.map((repo) => (
+                <div key={repo.id} className="github-repo-card glass-card">
+                  <div className="repo-card-header">
+                    <FolderGit2 size={24} className="repo-folder-icon" />
+                    <a 
+                      href={repo.html_url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="repo-title-link"
+                    >
+                      {repo.name}
+                    </a>
+                  </div>
+                  <p className="repo-desc">
+                    {repo.description || "Software repository developed using Sarthak's tech stack. Focuses on clean implementation and core algorithms."}
+                  </p>
+                  
+                  <div className="repo-footer">
+                    <div className="repo-stats-row">
+                      {repo.language && (
+                        <span className="repo-lang">
+                          <span className="lang-dot" style={{ backgroundColor: repo.language === 'Java' ? '#b07219' : repo.language === 'Python' ? '#3572A5' : repo.language === 'JavaScript' ? '#f1e05a' : '#555555' }}></span>
+                          {repo.language}
+                        </span>
+                      )}
+                      <span className="repo-stat-item">
+                        <Star size={12} /> {repo.stargazers_count}
+                      </span>
+                      <span className="repo-stat-item">
+                        <GitFork size={12} /> {repo.forks_count}
+                      </span>
+                    </div>
+                    <a 
+                      href={repo.html_url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="repo-link-btn"
+                    >
+                      Codebase &rarr;
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

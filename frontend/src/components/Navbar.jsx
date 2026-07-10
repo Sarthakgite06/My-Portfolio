@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Activity, ShieldAlert } from 'lucide-react';
+import { Menu, X, Activity, ShieldAlert, Palette, Download } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('portfolio-theme') || 'cyberpunk');
+  const [showThemeMenu, setShowThemeMenu] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -22,6 +24,12 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.className = '';
+    document.body.classList.add(`theme-${theme}`);
+    localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
+
   const navLinks = [
     { label: 'About', hash: 'about' },
     { label: 'Work', hash: 'work' },
@@ -31,8 +39,16 @@ const Navbar = () => {
     { label: 'Contact', hash: 'contact' }
   ];
 
+  const themes = [
+    { name: 'cyberpunk', label: 'Cyberpunk Glow', color: '#6366f1' },
+    { name: 'emerald', label: 'Slate Emerald', color: '#10b981' },
+    { name: 'nordic', label: 'Nordic Ice', color: '#38bdf8' },
+    { name: 'sunset', label: 'Sunset Amber', color: '#f97316' }
+  ];
+
   const handleNavClick = (hash) => {
     setIsOpen(false);
+    setShowThemeMenu(false);
     if (location.pathname !== '/') {
       navigate(`/#${hash}`);
     } else {
@@ -42,6 +58,17 @@ const Navbar = () => {
       }
     }
   };
+
+  // Close menus on click outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('.theme-selector-container')) {
+        setShowThemeMenu(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -59,6 +86,46 @@ const Navbar = () => {
               </button>
             </li>
           ))}
+
+          {/* Theme Selector */}
+          <li className="theme-selector-container" style={{ position: 'relative' }}>
+            <button 
+              className="theme-selector-btn" 
+              onClick={() => setShowThemeMenu(!showThemeMenu)}
+              title="Change Theme"
+            >
+              <Palette size={18} />
+            </button>
+            {showThemeMenu && (
+              <div className="theme-dropdown glass-card">
+                {themes.map((t) => (
+                  <button 
+                    key={t.name}
+                    className={`theme-opt ${theme === t.name ? 'active' : ''}`}
+                    onClick={() => {
+                      setTheme(t.name);
+                      setShowThemeMenu(false);
+                    }}
+                  >
+                    <span className="theme-dot" style={{ backgroundColor: t.color }}></span>
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </li>
+
+          {/* Resume Download */}
+          <li>
+            <a 
+              href="/Sarthak_Gite_Resume.pdf" 
+              download="Sarthak_Gite_Resume.pdf" 
+              className="nav-btn-link resume-nav-btn"
+            >
+              <Download size={15} /> Resume
+            </a>
+          </li>
+
           <li>
             <a 
               href="https://chc-frontend-brown.vercel.app/login" 
@@ -93,6 +160,39 @@ const Navbar = () => {
               </button>
             </li>
           ))}
+
+          {/* Mobile Theme Selector */}
+          <li className="mobile-theme-item">
+            <span className="mobile-theme-title"><Palette size={14} style={{ marginRight: '6px' }} /> Theme</span>
+            <div className="mobile-themes-grid">
+              {themes.map((t) => (
+                <button
+                  key={t.name}
+                  className={`mobile-theme-opt ${theme === t.name ? 'active' : ''}`}
+                  onClick={() => {
+                    setTheme(t.name);
+                    setIsOpen(false);
+                  }}
+                >
+                  <span className="theme-dot" style={{ backgroundColor: t.color, display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', marginRight: '6px' }}></span>
+                  {t.label.split(' ')[0]}
+                </button>
+              ))}
+            </div>
+          </li>
+
+          {/* Mobile Resume Link */}
+          <li>
+            <a 
+              href="/Sarthak_Gite_Resume.pdf" 
+              download="Sarthak_Gite_Resume.pdf" 
+              className="nav-btn-link mobile-resume-link"
+              onClick={() => setIsOpen(false)}
+            >
+              <Download size={16} style={{ marginRight: '6px' }} /> Download Resume
+            </a>
+          </li>
+
           <li>
             <a 
               href="https://chc-frontend-brown.vercel.app/login" 

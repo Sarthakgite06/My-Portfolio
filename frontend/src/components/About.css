@@ -135,6 +135,17 @@
 .stat-icon-pink { color: var(--accent-pink); }
 .stat-icon-teal { color: var(--accent-teal); }
 
+/* Card Border Underline Color Variants */
+.stat-card-gold { border-bottom: 2px solid var(--accent-gold) !important; }
+.stat-card-blue { border-bottom: 2px solid var(--accent) !important; }
+.stat-card-pink { border-bottom: 2px solid var(--accent-pink) !important; }
+.stat-card-teal { border-bottom: 2px solid var(--accent-teal) !important; }
+
+.stat-card-gold:hover { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(245, 158, 11, 0.15); }
+.stat-card-blue:hover { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(99, 102, 241, 0.15); }
+.stat-card-pink:hover { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(236, 72, 153, 0.15); }
+.stat-card-teal:hover { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(20, 184, 166, 0.15); }
+
 @media (max-width: 968px) {
   .about-grid {
     grid-template-columns: 1fr;

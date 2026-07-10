@@ -19,6 +19,17 @@ const Experience = () => {
       link: 'https://www.linkedin.com/in/sarthak-gite-0ab655258'
     },
     {
+      role: 'City Head Intern',
+      company: 'Twin Mind AI (USA)',
+      duration: 'May 2025 - July 2025',
+      points: [
+        'Led regional growth strategy and campus brand launch campaigns in Pune for the Silicon Valley-backed personal AI productivity second brain platform.',
+        'Managed local student brand ambassador groups, directed workshops, and coordinated cross-campus seminars to onboard 1,000+ new active student users.',
+        'Collected local user experience feedback metrics to assist Twin Mind product engineering teams in refining transcribing models and productivity automation tools.'
+      ],
+      link: 'https://www.linkedin.com/in/sarthak-gite-0ab655258'
+    },
+    {
       role: 'Project Intern',
       company: 'Neu AI Labs',
       duration: 'Dec 2024 - Jan 2025',
@@ -41,6 +52,12 @@ const Experience = () => {
   ];
 
   const achievementData = [
+    {
+      title: 'Campus Ambassador',
+      organization: 'Techfest, IIT Bombay',
+      period: 'Academic Year 2024 – 2025',
+      desc: 'Represented Asia\'s largest science and technology festival at the university campus. Coordinated college-level publicity campaigns, facilitated student registration drives, and organized tech-workshops and programming challenges.'
+    },
     {
       title: 'Vice President – AI & DS Department',
       organization: 'G S Moze College of Engineering (SPPU)',

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Skills.css';
 
 const Skills = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
+
   const skillCategories = [
     {
       title: 'AI & Data Science',
@@ -39,28 +41,48 @@ const Skills = () => {
       <div className="container">
         <h2 className="section-title">Technical Skills</h2>
 
-        <div className="skills-grid">
+        <div className="skills-tabs-header">
+          <button 
+            className={`tab-btn ${activeCategory === 'all' ? 'active' : ''}`}
+            onClick={() => setActiveCategory('all')}
+          >
+            All Categories
+          </button>
           {skillCategories.map((cat, idx) => (
-            <div key={idx} className="skills-card glass-card">
-              <h3 className="cat-title">{cat.title}</h3>
-              <div className="skills-list">
-                {cat.skills.map((skill, sIdx) => (
-                  <div key={sIdx} className="skill-item">
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-level">{skill.level}</span>
-                    </div>
-                    <div className="skill-progress-bar">
-                      <div 
-                        className="skill-progress-fill" 
-                        style={{ '--width-target': skill.level }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <button 
+              key={idx}
+              className={`tab-btn ${activeCategory === cat.title ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat.title)}
+            >
+              {cat.title}
+            </button>
           ))}
+        </div>
+
+        <div className="skills-grid">
+          {skillCategories
+            .filter((cat) => activeCategory === 'all' || cat.title === activeCategory)
+            .map((cat, idx) => (
+              <div key={idx} className="skills-card glass-card animate-fade-in">
+                <h3 className="cat-title">{cat.title}</h3>
+                <div className="skills-list">
+                  {cat.skills.map((skill, sIdx) => (
+                    <div key={sIdx} className="skill-item">
+                      <div className="skill-info">
+                        <span className="skill-name">{skill.name}</span>
+                        <span className="skill-level">{skill.level}</span>
+                      </div>
+                      <div className="skill-progress-bar">
+                        <div 
+                          className="skill-progress-fill" 
+                          style={{ '--width-target': skill.level }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </section>

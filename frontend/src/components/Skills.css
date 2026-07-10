@@ -2,6 +2,43 @@
   background-color: var(--bg-primary);
 }
 
+.skills-tabs-header {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.skills-tabs-header .tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 10px 20px;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.skills-tabs-header .tab-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.skills-tabs-header .tab-btn.active {
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--text-primary);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.15);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
