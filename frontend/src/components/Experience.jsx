@@ -212,7 +212,7 @@ const Experience = () => {
       category: 'leadership',
       date: 'AY 2024 – 2025',
       code: 'IITB-TECHFEST-CA',
-      preview: '/certificates/extracted_Certificate_Sarthak_Gite (2)_img1.jpeg',
+      preview: '/certificates/iitb_preview.png',
       pdf: '/certificates/Certificate_Sarthak_Gite (2).pdf',
       badge: '🏆 IIT Bombay'
     },
@@ -223,7 +223,7 @@ const Experience = () => {
       category: 'cloud-ai',
       date: '2025',
       code: 'BE10X-AI-2025',
-      preview: '/certificates/extracted_Certificate_img1.png',
+      preview: '/certificates/be10x_preview.png',
       pdf: '/certificates/Certificate.pdf',
       badge: '✨ be10X AI'
     },
