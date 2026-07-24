@@ -37,3 +37,9 @@ yarn-error.log*
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Temporary scratch screenshots & crops
+Screenshot*.png
+crop_header_*.png
+extracted_*.png
+extracted_*.jpeg

@@ -5,28 +5,20 @@ import './Education.css';
 const Education = () => {
   const educationData = [
     {
-      period: '2022 - 2026',
-      degree: 'Bachelor of Engineering (B.E.)',
-      major: 'Artificial Intelligence & Data Science',
-      institution: 'G S Moze College of Engineering',
-      location: 'Balewadi, Pune (SPPU)',
-      desc: 'Focused on core AI/DS architectures: Machine Learning models, Neural Networks, Deep Learning configurations, Big Data structures, and SQL/NoSQL systems. Serving as Vice President of AI & DS association.'
+      period: 'Nov 2022 – Jul 2026',
+      degree: 'B.E. in Artificial Intelligence & Data Science',
+      major: 'CGPA: 8.62 / 10.0',
+      institution: 'Savitribai Phule Pune University (SPPU)',
+      location: 'Pune, India',
+      desc: 'Hands-on experience in AI, ML, data analysis, and web development through projects, corporate internships, and competitive coding contests.'
     },
     {
-      period: '2020 - 2022',
-      degree: 'Higher Secondary Certificate (HSC)',
-      major: 'Science Stream (Physics, Chemistry, Maths, CS)',
-      institution: 'Anasaheb Wagire College',
-      location: 'Otur, Pune',
+      period: 'Mar 2021 – Jun 2022',
+      degree: 'Higher Secondary Certificate (Class XII)',
+      major: 'Percentage: 64.83%',
+      institution: 'Annasaheb Waghire College',
+      location: 'Otur, Maharashtra, India',
       desc: 'Built fundamental engineering skills in analytical physics, advanced mathematics calculus, chemistry formulas, and programming logic foundations.'
-    },
-    {
-      period: '2019 - 2020',
-      degree: 'Secondary School Certificate (SSC)',
-      major: 'General Curriculum',
-      institution: 'Chaitanya Vidyalaya',
-      location: 'Otur, Pune',
-      desc: 'Completed with distinction. Participated in science exhibitions, local coding clubs, and extracurricular quizzes.'
     }
   ];
 

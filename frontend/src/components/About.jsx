@@ -4,10 +4,10 @@ import './About.css';
 
 const About = () => {
   const stats = [
-    { icon: <GraduationCap size={20} className="stat-icon-gold" />, label: 'Overall CGPA', value: '9.60 / 10', colorClass: 'gold' },
-    { icon: <Briefcase size={20} className="stat-icon-blue" />, label: 'Experience', value: '2 Internships', colorClass: 'blue' },
-    { icon: <Code size={20} className="stat-icon-pink" />, label: 'Projects Done', value: '5+ Core Apps', colorClass: 'pink' },
-    { icon: <Award size={20} className="stat-icon-teal" />, label: 'Dept Leadership', value: 'Vice President', colorClass: 'teal' }
+    { icon: <GraduationCap size={20} className="stat-icon-gold" />, label: 'Overall CGPA', value: '8.62 / 10', colorClass: 'gold' },
+    { icon: <Briefcase size={20} className="stat-icon-blue" />, label: 'Experience', value: '6+ Internships', colorClass: 'blue' },
+    { icon: <Code size={20} className="stat-icon-pink" />, label: 'Projects Done', value: '10+ Core Apps', colorClass: 'pink' },
+    { icon: <Award size={20} className="stat-icon-teal" />, label: 'Dept Leadership', value: 'College Ambassador', colorClass: 'teal' }
   ];
 
   return (
@@ -32,7 +32,7 @@ const About = () => {
               I am an Artificial Intelligence and Data Science Engineer with a passion for designing intelligent models, analyzing complex systems, and building scalable full-stack web applications.
             </p>
             <p className="about-text">
-              Currently pursuing my engineering degree, I have maintained high academic excellence (9.60 CGPA) while working on various internships and practical data analysis projects. I enjoy bridging the gap between advanced analytical machine learning models and visual, intuitive user applications.
+              Currently pursuing my B.E. in Artificial Intelligence & Data Science at Savitribai Phule Pune University (SPPU) with a CGPA of 8.62, I have completed multiple professional internships across front-end web development, AI platforms, data analytics, and project leadership.
             </p>
             
             <div className="stats-dashboard">
