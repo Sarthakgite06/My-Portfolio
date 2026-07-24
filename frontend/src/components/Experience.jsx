@@ -113,8 +113,8 @@ const Experience = () => {
       category: 'cloud-ai',
       date: 'Sept 2025 – Sept 2027',
       code: '102578465OCI25DSOCP',
-      preview: '/certificates/eCertificate_page_1.png',
-      pdf: '/certificates/eCertificate.pdf',
+      preview: '/certificates/oracle_cloud_ds_page_1.png',
+      pdf: '/certificates/oracle_cloud_ds.pdf',
       badge: '☁️ Oracle Cloud'
     },
     {
@@ -124,8 +124,8 @@ const Experience = () => {
       category: 'analytics-dev',
       date: 'June 2025',
       code: 'dMQpbvEddawLrunng',
-      preview: '/certificates/sarthak Deolitte certificate_page_1.png',
-      pdf: '/certificates/sarthak Deolitte certificate.pdf',
+      preview: '/certificates/deloitte_analytics_page_1.png',
+      pdf: '/certificates/deloitte_analytics.pdf',
       badge: '📊 Deloitte'
     },
     {
@@ -135,8 +135,8 @@ const Experience = () => {
       category: 'cloud-ai',
       date: 'June 2025',
       code: 'Tata GenAI Analytics',
-      preview: '/certificates/Tata certificate_page_1.png',
-      pdf: '/certificates/Tata certificate.pdf',
+      preview: '/certificates/tata_genai_analytics_page_1.png',
+      pdf: '/certificates/tata_genai_analytics.pdf',
       badge: '🤖 Tata Group'
     },
     {
@@ -146,8 +146,8 @@ const Experience = () => {
       category: 'analytics-dev',
       date: 'Nov 2024',
       code: '75f914819639ada29fd3158c7c52eaee4b56e6280bead4a70c56449d633a127b',
-      preview: '/certificates/CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn_page_1.png',
-      pdf: '/certificates/CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn.pdf',
+      preview: '/certificates/microsoft_linkedin_dev_page_1.png',
+      pdf: '/certificates/microsoft_linkedin_dev.pdf',
       badge: '💻 Microsoft'
     },
     {
@@ -157,8 +157,8 @@ const Experience = () => {
       category: 'internships',
       date: 'Sept 2025 – Oct 2025',
       code: 'OWL-AI-FE-2025',
-      preview: '/certificates/internship completion certificate.png',
-      pdf: '/certificates/internship completion certificate.png',
+      preview: '/certificates/owl_ai_internship.png',
+      pdf: '/certificates/owl_ai_internship.png',
       badge: '🚀 OWL AI'
     },
     {
@@ -168,8 +168,8 @@ const Experience = () => {
       category: 'internships',
       date: 'Aug 2025 – Oct 2025',
       code: 'EAZYBE-SDR-2025',
-      preview: '/certificates/Internship Certificate Eazybe - Sarthak_page_1.png',
-      pdf: '/certificates/Internship Certificate Eazybe - Sarthak.pdf',
+      preview: '/certificates/eazybe_sdr_internship_page_1.png',
+      pdf: '/certificates/eazybe_sdr_internship.pdf',
       badge: '💼 Eazybe'
     },
     {
@@ -179,8 +179,8 @@ const Experience = () => {
       category: 'internships',
       date: 'Aug 2025',
       code: 'cxifnwd20250891038',
-      preview: '/certificates/internship certificate_page_1.png',
-      pdf: '/certificates/internship certificate.pdf',
+      preview: '/certificates/codex_internship_page_1.png',
+      pdf: '/certificates/codex_internship.pdf',
       badge: '🌐 CodexIntern'
     },
     {
@@ -190,8 +190,8 @@ const Experience = () => {
       category: 'internships',
       date: 'Apr 2025',
       code: 'FIT/APR25/FS1344',
-      preview: '/certificates/certificate of future intern.jpeg',
-      pdf: '/certificates/certificate of future intern.jpeg',
+      preview: '/certificates/future_interns.jpeg',
+      pdf: '/certificates/future_interns.jpeg',
       badge: '🔥 Future Interns'
     },
     {
@@ -201,8 +201,8 @@ const Experience = () => {
       category: 'leadership',
       date: 'Apr 2025',
       code: 'GDG-CP-AISSMS-2025',
-      preview: '/certificates/Sarthak Gite_page_1.png',
-      pdf: '/certificates/Sarthak Gite.pdf',
+      preview: '/certificates/gdg_cp_contest_2025_page_1.png',
+      pdf: '/certificates/gdg_cp_contest_2025.pdf',
       badge: '⚡ Google GDG'
     },
     {
@@ -212,8 +212,8 @@ const Experience = () => {
       category: 'leadership',
       date: 'AY 2024 – 2025',
       code: 'IITB-TECHFEST-CA',
-      preview: '/certificates/iitb_preview.png',
-      pdf: '/certificates/Certificate_Sarthak_Gite (2).pdf',
+      preview: '/certificates/iitb_techfest_ca_page_1.png',
+      pdf: '/certificates/iitb_techfest_ca.pdf',
       badge: '🏆 IIT Bombay'
     },
     {
@@ -223,8 +223,8 @@ const Experience = () => {
       category: 'cloud-ai',
       date: '2025',
       code: 'BE10X-AI-2025',
-      preview: '/certificates/be10x_preview.png',
-      pdf: '/certificates/Certificate.pdf',
+      preview: '/certificates/be10x_ai_workshop_page_1.png',
+      pdf: '/certificates/be10x_ai_workshop.pdf',
       badge: '✨ be10X AI'
     },
     {
@@ -234,8 +234,8 @@ const Experience = () => {
       category: 'cloud-ai',
       date: 'Jun 2025',
       code: '27614117',
-      preview: '/certificates/certificate (1) (1)_page_1.png',
-      pdf: '/certificates/certificate (1) (1).pdf',
+      preview: '/certificates/skillquest_ds_foundation_page_1.png',
+      pdf: '/certificates/skillquest_ds_foundation.pdf',
       badge: '🎯 SkillQuest'
     },
     {
@@ -245,8 +245,8 @@ const Experience = () => {
       category: 'leadership',
       date: 'Jan 2025',
       code: 'SBL1D9NZ',
-      preview: '/certificates/communication Skill.jpeg',
-      pdf: '/certificates/communication Skill.jpeg',
+      preview: '/certificates/skillected_communication.jpeg',
+      pdf: '/certificates/skillected_communication.jpeg',
       badge: '🗣️ SkillEcted'
     },
     {
@@ -256,9 +256,9 @@ const Experience = () => {
       category: 'leadership',
       date: 'Apr 2025',
       code: 'CIT-P-1640352',
-      preview: '/certificates/Sarthak Gite - Participation Certificate_page_1.png',
-      pdf: '/certificates/Sarthak Gite - Participation Certificate.pdf',
-      badge: '📜 Participation'
+      preview: '/certificates/participation_certificate_page_1.png',
+      pdf: '/certificates/participation_certificate.pdf',
+      badge: '🏅 Technical Event'
     }
   ];
 
@@ -376,7 +376,15 @@ const Experience = () => {
                   <div key={cert.id} className="cert-card-enhanced glass-card">
                     {/* Thumbnail Preview Image */}
                     <div className="cert-thumb-box" onClick={() => setSelectedCert(cert)}>
-                      <img src={cert.preview} alt={cert.title} className="cert-thumb-img" />
+                      <img 
+                        src={cert.preview} 
+                        alt={cert.title} 
+                        className="cert-thumb-img" 
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = '/projects/portfolio_hero_screenshot.png';
+                        }}
+                      />
                       <span className="cert-badge-tag">{cert.badge}</span>
                       <div className="cert-thumb-overlay">
                         <Eye size={20} />
