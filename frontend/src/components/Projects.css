@@ -552,4 +552,37 @@
   .proj-actions-row {
     flex-wrap: wrap;
   }
+  .proj-actions-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
+
+@media (max-width: 576px) {
+  .category-filter-container {
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    font-size: 0.82rem;
+  }
+
+  .proj-title {
+    font-size: 1.15rem;
+  }
+
+  .project-body {
+    padding: 18px;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
+  .modal-img-container {
+    height: 180px;
+  }
+}
+

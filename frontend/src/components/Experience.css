@@ -481,3 +481,59 @@
   }
 }
 
+@media (max-width: 576px) {
+  .timeline-wrapper {
+    padding-left: 22px;
+  }
+
+  .timeline-wrapper::before {
+    left: 4px;
+  }
+
+  .timeline-card {
+    padding: 20px;
+  }
+
+  .timeline-card::before {
+    left: -23px;
+    width: 12px;
+    height: 12px;
+    top: 26px;
+    border-width: 3px;
+  }
+
+  .card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .card-role {
+    font-size: 1.15rem;
+  }
+
+  .card-company {
+    font-size: 0.98rem;
+  }
+
+  .cert-filter-bar {
+    gap: 6px;
+    margin-bottom: 25px;
+  }
+
+  .cert-filter-pill {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  .cert-actions {
+    flex-wrap: wrap;
+  }
+
+  .cert-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
