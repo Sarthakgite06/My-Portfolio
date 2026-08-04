@@ -18,6 +18,12 @@
             --gold-glow: #ffed4a;
         }
         
+        html, body {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden !important;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -33,8 +39,23 @@
         
         .container {
             max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex !important; }
+            h1 { font-size: 2.2rem !important; word-break: break-word; }
+            .profile-image-container, .profile-image img { width: 220px !important; height: 220px !important; }
+            .skills-container, .projects-grid { grid-template-columns: 1fr !important; }
+        }
+
+        @media (max-width: 576px) {
+            h1 { font-size: 1.8rem !important; }
+            .container { padding: 0 16px !important; }
+            .profile-image-container, .profile-image img { width: 180px !important; height: 180px !important; }
         }
         
         /* Navigation Styles */
