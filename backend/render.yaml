@@ -1,0 +1,62 @@
+# Render deployment configuration for Portfolio Backend (Spring Boot)
+# Docs: https://render.com/docs/render-yaml-spec
+
+services:
+  - type: web
+    name: portfolio-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+
+    # Health check so Render knows when the service is up
+    healthCheckPath: /
+
+    # Environment variables — set secret values in the Render dashboard
+    envVars:
+      - key: PORT
+        value: 5000
+
+      # Database (H2 file-based by default; override with PostgreSQL below if needed)
+      # - key: JDBC_DATABASE_URL
+      #   value: jdbc:postgresql://<host>/<db>
+      # - key: JDBC_DATABASE_DRIVER
+      #   value: org.postgresql.Driver
+      # - key: JDBC_DATABASE_USERNAME
+      #   fromDatabase:
+      #     name: portfolio-db
+      #     property: user
+      # - key: JDBC_DATABASE_PASSWORD
+      #   fromDatabase:
+      #     name: portfolio-db
+      #     property: password
+
+      # Mail (Gmail SMTP)
+      - key: SPRING_MAIL_HOST
+        value: smtp.gmail.com
+      - key: SPRING_MAIL_PORT
+        value: 587
+      - key: SPRING_MAIL_USERNAME
+        sync: false   # Set in Render dashboard
+      - key: SPRING_MAIL_PASSWORD
+        sync: false   # Set in Render dashboard (App Password)
+
+      # Twilio (optional SMS alerts)
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_FROM_NUMBER
+        sync: false
+      - key: TWILIO_TO_NUMBER
+        value: "+919130383513"
+
+      - key: PORTFOLIO_ALERT_EMAIL
+        value: sarthakgite006@gmail.com
+
+# Uncomment to add a managed PostgreSQL DB (free tier)
+# databases:
+#   - name: portfolio-db
+#     databaseName: portfolio
+#     user: portfolio_user
+#     plan: free

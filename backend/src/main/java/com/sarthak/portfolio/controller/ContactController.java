@@ -73,7 +73,7 @@ public class ContactController {
 
     // DELETE /api/contact/{id} - Delete message
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> deleteMessage(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> deleteMessage(@PathVariable long id) {
         Map<String, Object> response = new HashMap<>();
         
         if (!contactMessageRepository.existsById(id)) {

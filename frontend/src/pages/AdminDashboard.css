@@ -270,6 +270,45 @@
 
 @media (max-width: 768px) {
   .admin-status-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-status-board {
     grid-template-columns: 1fr;
+  }
+  .admin-logs-card {
+    padding: 24px !important;
+  }
+  .logs-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .logs-header h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .msg-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .msg-email {
+    word-break: break-word;
+    font-size: 0.95rem;
+  }
+  .msg-footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .message-item-card {
+    padding: 16px;
+  }
+  .admin-title-row h1 {
+    font-size: 1.5rem;
   }
 }

@@ -122,4 +122,21 @@
   .contact-form-wrapper {
     padding: 24px !important;
   }
+  .info-desc {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .info-item {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .info-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .info-title {
+    font-size: 1.4rem;
+  }
 }

@@ -7,6 +7,7 @@ import com.sarthak.portfolio.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -52,7 +53,10 @@ public class HealthCardController {
 
         // Fetch recent 5 patients sorted by creation date descending
         List<Patient> recent = patients.stream()
-                .sorted(Comparator.comparing(Patient::getCreatedAt).reversed())
+                .filter(p -> p != null)
+                .sorted(Comparator.comparing(
+                        (Patient p) -> p.getCreatedAt(),
+                        Comparator.nullsFirst(Comparator.naturalOrder())).reversed())
                 .limit(5)
                 .collect(Collectors.toList());
 
@@ -113,7 +117,7 @@ public class HealthCardController {
 
     // GET /api/health-cards/{id} - Get card details
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> getPatientCard(@PathVariable String id) {
+    public ResponseEntity<Map<String, Object>> getPatientCard(@PathVariable @NonNull String id) {
         Map<String, Object> response = new HashMap<>();
         Optional<Patient> patientOpt = patientRepository.findById(id);
 
@@ -129,7 +133,7 @@ public class HealthCardController {
 
     // GET /api/health-cards/{id}/records - Retrieve medical visit history
     @GetMapping("/{id}/records")
-    public ResponseEntity<Map<String, Object>> getMedicalHistory(@PathVariable String id) {
+    public ResponseEntity<Map<String, Object>> getMedicalHistory(@PathVariable @NonNull String id) {
         Map<String, Object> response = new HashMap<>();
         
         if (!patientRepository.existsById(id)) {
@@ -146,7 +150,7 @@ public class HealthCardController {
 
     // POST /api/health-cards/{id}/records - Doctors add prescription consult log
     @PostMapping("/{id}/records")
-    public ResponseEntity<Map<String, Object>> addMedicalRecord(@PathVariable String id, @RequestBody MedicalRecord record) {
+    public ResponseEntity<Map<String, Object>> addMedicalRecord(@PathVariable @NonNull String id, @RequestBody MedicalRecord record) {
         Map<String, Object> response = new HashMap<>();
 
         if (record.getDiagnosis() == null || record.getDiagnosis().trim().isEmpty() ||

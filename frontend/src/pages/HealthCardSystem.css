@@ -648,7 +648,7 @@
   
   .side-tab-btn {
     flex: 1;
-    min-width: 200px;
+    min-width: 160px;
     justify-content: center;
   }
 }
@@ -657,6 +657,26 @@
   .card-viewer-layout, .doctor-forms-grid, .analytics-details-layout {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-cards-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .search-bar-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-input {
+    max-width: 100%;
+  }
+
+  .health-title-row h1 {
+    font-size: 1.6rem;
   }
 }
 
@@ -672,10 +692,26 @@
   
   .side-tab-btn {
     width: 100%;
+    min-width: unset;
+    flex: unset;
   }
   
   .digital-wallet-card {
     aspect-ratio: 1.3 / 1;
     height: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .health-title-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .health-title-row h1 {
+    font-size: 1.4rem;
+  }
+  .patient-banner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

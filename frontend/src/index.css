@@ -426,6 +426,20 @@ a {
   .btn {
     padding: 10px 18px;
     font-size: 0.9rem;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .section-title {
+    font-size: 1.7rem;
+  }
+  .container {
+    padding: 0 12px;
+  }
+  .section {
+    padding: 40px 0;
   }
 }
 

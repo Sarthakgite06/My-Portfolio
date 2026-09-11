@@ -584,5 +584,28 @@
   .modal-img-container {
     height: 180px;
   }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .modal-content {
+    padding: 16px;
+  }
+  .modal-title {
+    font-size: 1.2rem;
+  }
+  .filter-btn {
+    padding: 5px 10px;
+    font-size: 0.78rem;
+  }
 }
 
